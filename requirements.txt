@@ -1,1 +1,4 @@
+# requirements.txt
 streamlit
+gcsfs
+st-files-connection
