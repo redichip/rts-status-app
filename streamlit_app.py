@@ -8,4 +8,5 @@ from st_files_connection import FilesConnection
 conn = st.connection('gcs', type=FilesConnection)
 df = conn.read("520885133717268/Results.csv", input_format="csv", ttl=600)
 st.title('RTS View')
-st.dataframe(df, use_container_width=True)
+sorted_df = df.iloc[df["CODProfit"].abs().argsort()]
+st.dataframe(sorted_df, use_container_width=True)
